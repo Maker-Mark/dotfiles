@@ -9,14 +9,12 @@ require('packer').startup(function(use)
 
     -- lsp
     use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
+    -- completions
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
-    use {
-	'williamboman/nvim-lsp-installer',
-	'neovim/nvim-lspconfig',
-    }
     -- adds symbols to nvm-cmp
     use 'onsails/lspkind.nvim'
 
@@ -110,6 +108,9 @@ require('packer').startup(function(use)
 
     -- language support for svelte
     use 'evanleck/vim-svelte'
+
+    -- display/menu for nvim command by itself
+    use 'glepnir/dashboard-nvim'
 end)
 
 local compileGroup = vim.api.nvim_create_augroup('AutoCompile', { clear = true })
