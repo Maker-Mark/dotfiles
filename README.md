@@ -1,6 +1,6 @@
 # EmNudge dotfiles
 
 ```bash
-ln -s ~/.config/nvim ./nvim
+ln -s ./nvim ~/.config/nvim
 ```
 
