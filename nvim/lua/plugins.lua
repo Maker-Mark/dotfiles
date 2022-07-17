@@ -111,6 +111,12 @@ require('packer').startup(function(use)
 
     -- display/menu for nvim command by itself
     use 'glepnir/dashboard-nvim'
+
+    -- comment lines more easily
+    use {
+	'terrortylor/nvim-comment',
+	config = function() require'nvim_comment'.setup() end,
+    }
 end)
 
 local compileGroup = vim.api.nvim_create_augroup('AutoCompile', { clear = true })
