@@ -1,6 +1,8 @@
 -- mouse in all modes
 vim.opt.mouse = 'a'
 
+vim.opt.splitright = true
+
 -- indents
 vim.opt.tabstop = 8
 vim.opt.shiftwidth = 4
