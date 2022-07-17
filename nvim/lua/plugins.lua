@@ -1,5 +1,5 @@
 
-require('packer').startup(function(use)
+require'packer'.startup(function(use)
     use 'wbthomason/packer.nvim'
     -- colorscheme
     use {
@@ -26,13 +26,14 @@ require('packer').startup(function(use)
 
     -- treesitter
     use 'nvim-treesitter/nvim-treesitter'
+    -- NOTE: is this needed?
     use 'nvim-treesitter/nvim-treesitter-refactor'
 
     -- file menu
     use {
 	'kyazdani42/nvim-tree.lua',
 	requires = 'kyazdani42/nvim-web-devicons',
-	config = function() require('nvim-tree').setup() end,
+	config = function() require'nvim-tree'.setup() end,
     }
 
     use {
@@ -50,7 +51,7 @@ require('packer').startup(function(use)
 	    vim.opt.listchars:append('eol:↴')
 
 
-	    require('indent_blankline').setup {
+	    require'indent_blankline'.setup {
 		show_end_of_line = true,
 		space_char_blankline = ' ',
 	    }
@@ -64,7 +65,7 @@ require('packer').startup(function(use)
 	    'nvim-lua/popup.nvim',
 	    'nvim-lua/plenary.nvim'
 	},
-	config = function() require('telescope').setup() end,
+	config = function() require'telescope'.setup() end,
     }
 
     use {
@@ -78,10 +79,8 @@ require('packer').startup(function(use)
     -- terminal in vim
     use {
 	'akinsho/toggleterm.nvim',
-	tag = 'v2.*', 
-	config = function()
-	  require('toggleterm').setup()
-	end,
+	tag = 'v2.*',
+	config = function() require'toggleterm'.setup() end,
     }
 
     -- tabs
@@ -89,7 +88,7 @@ require('packer').startup(function(use)
 	'akinsho/bufferline.nvim',
 	tag = 'v2.*',
 	requires = 'kyazdani42/nvim-web-devicons',
-	config = function() require('bufferline').setup() end,
+	config = function() require'bufferline'.setup() end,
     }
 
     -- statusline
@@ -99,7 +98,7 @@ require('packer').startup(function(use)
 	    'kyazdani42/nvim-web-devicons',
 	    opt = true
 	},
-	config = function() require('lualine').setup {
+	config = function() require'lualine'.setup {
 	    options = {
 		globalstatus = true
 	    }
