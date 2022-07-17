@@ -14,8 +14,8 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
     use {
-	"williamboman/nvim-lsp-installer",
-	"neovim/nvim-lspconfig",
+	'williamboman/nvim-lsp-installer',
+	'neovim/nvim-lspconfig',
     }
     -- adds symbols to nvm-cmp
     use 'onsails/lspkind.nvim'
@@ -38,23 +38,23 @@ require('packer').startup(function(use)
     }
 
     use {
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
+      'folke/trouble.nvim',
+      requires = 'kyazdani42/nvim-web-devicons',
       config = function() require'trouble'.setup() end,
     }
 
     -- indentation markers (vertical lines)
     use {
-	"lukas-reineke/indent-blankline.nvim",
+	'lukas-reineke/indent-blankline.nvim',
 	config = function()
 	    vim.opt.list = true
-	    vim.opt.listchars:append("space:⋅")
-	    vim.opt.listchars:append("eol:↴")
+	    vim.opt.listchars:append('space:⋅')
+	    vim.opt.listchars:append('eol:↴')
 
 
-	    require("indent_blankline").setup {
+	    require('indent_blankline').setup {
 		show_end_of_line = true,
-		space_char_blankline = " ",
+		space_char_blankline = ' ',
 	    }
 	end,
     }
@@ -63,15 +63,15 @@ require('packer').startup(function(use)
     use {
 	'nvim-telescope/telescope.nvim',
 	requires = {
-	    'nvim-lua/popup.nvim', 
-	    'nvim-lua/plenary.nvim' 
+	    'nvim-lua/popup.nvim',
+	    'nvim-lua/plenary.nvim'
 	},
 	config = function() require('telescope').setup() end,
     }
 
     use {
-	'nvim-telescope/telescope-fzf-native.nvim', 
-	run = 'make' 
+	'nvim-telescope/telescope-fzf-native.nvim',
+	run = 'make'
     }
 
     -- prettify code
@@ -88,7 +88,7 @@ require('packer').startup(function(use)
 
     -- tabs
     use {
-	'akinsho/bufferline.nvim', 
+	'akinsho/bufferline.nvim',
 	tag = 'v2.*',
 	requires = 'kyazdani42/nvim-web-devicons',
 	config = function() require('bufferline').setup() end,
@@ -107,4 +107,14 @@ require('packer').startup(function(use)
 	    }
 	} end,
     }
+
+    -- language support for svelte
+    use 'evanleck/vim-svelte'
 end)
+
+local compileGroup = vim.api.nvim_create_augroup('AutoCompile', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+    group = compileGroup,
+    pattern = 'plugins.lua',
+    command = 'source <afile> | PackerCompile',
+})

@@ -16,14 +16,16 @@ end
 
 require'nvim-lsp-installer'.setup {}
 
-require'lspconfig'.rust_analyzer.setup {
+local lsp_config = require'lspconfig'
+
+lsp_config.rust_analyzer.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    ["rust-analyzer"] = {
-	checkonsave = { command = "clippy" },
+    ['rust-analyzer'] = {
+	checkonsave = { command = 'clippy' },
     },
 }
-require'lspconfig'.sumneko_lua.setup {
+lsp_config.sumneko_lua.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -36,22 +38,26 @@ require'lspconfig'.sumneko_lua.setup {
 		globals = { 'vim' }
 	    },
 	     workspace = {
-		library = {[
-		    vim.fn.expand('$VIMRUNTIME/lua')] = true,
+		library = {
+		    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
 		    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
 		}
 	    },
 	},
     }
 }
+lsp_config.svelte.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
 
-vim.opt.completeopt = {"menu", "menuone", "noselect"}
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
+        vim.fn['vsnip#anonymous'](args.body)
     end,
   },
   mapping = {
@@ -89,7 +95,7 @@ cmp.setup({
 local diag = vim.api.nvim_create_augroup('Diagnosticals', { clear = true })
 vim.api.nvim_create_autocmd('CursorHold', {
     group = diag,
-    pattern = "*",
+    pattern = '*',
     callback = function()
 	vim.diagnostic.open_float(nil, { focusable = false })
     end
