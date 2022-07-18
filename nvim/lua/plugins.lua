@@ -118,6 +118,11 @@ require'packer'.startup(function(use)
     }
 
     use 'mg979/vim-visual-multi'
+
+    use {
+      'folke/which-key.nvim',
+      config = function() require'which-key'.setup {} end,
+    }
 end)
 
 local compileGroup = vim.api.nvim_create_augroup('AutoCompile', { clear = true })

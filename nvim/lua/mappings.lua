@@ -43,7 +43,5 @@ cmd_nmap('<Leader>p', 'Neoformat')
 cmd_nmap('<Leader>f', 'Telescope live_grep')
 cmd_nmap('<Leader>r', 'Telescope find_files')
 
--- comment
-cmd_nmap('<Leader>c', 'CommentToggle')
-cmd_vmap('<Leader>c', '\'<,\'>CommentToggle')
-
+-- info on key bindings
+cmd_nmap('?', 'WhichKey')
