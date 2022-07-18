@@ -5,15 +5,27 @@ local tmap = mode_map 't'
 
 local function cmd_nmap(keys, cmd) nmap(keys, '<cmd>' .. cmd .. '<cr>') end
 local function cmd_vmap(keys, cmd) vmap(keys, '<cmd>' .. cmd .. '<cr>') end
+local function term_map(keys, cmd) tmap(keys, '<C-\\><C-n>' .. cmd) end
 
 vim.g.mapleader = ' '
+
+-- remove highlights 
+nmap('<esc>', ':noh<return><esc>')
 
 -- keep selects for indents
 vmap('<', '<gv')
 vmap('>', '>gv')
 
--- leave terminal
-tmap('<M-k>', '<C-\\><C-n> <C-w>k')
+-- open the terminal
+cmd_nmap('<Leader>mm', 'ToggleTerm direction=horizontal')
+cmd_nmap('<Leader>mn', 'ToggleTerm direction=float')
+
+-- allow leaving the terminal
+term_map('<esc>', '')
+term_map('<C-h>', '<C-W>h')
+term_map('<C-j>', '<C-W>j')
+term_map('<C-k>', '<C-W>k')
+term_map('<C-l>', '<C-W>l')
 
 -- barbar / file tabs
 cmd_nmap('f', 'BufferLinePick')

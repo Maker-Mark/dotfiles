@@ -116,6 +116,8 @@ require'packer'.startup(function(use)
 	'terrortylor/nvim-comment',
 	config = function() require'nvim_comment'.setup() end,
     }
+
+    use 'mg979/vim-visual-multi'
 end)
 
 local compileGroup = vim.api.nvim_create_augroup('AutoCompile', { clear = true })
