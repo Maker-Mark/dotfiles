@@ -20,8 +20,8 @@ require'packer'.startup(function(use)
 
     -- git integration
     use {
-      'lewis6991/gitsigns.nvim',
-      config = function() require'gitsigns'.setup() end,
+	'lewis6991/gitsigns.nvim',
+	config = function() require'gitsigns'.setup() end,
     }
 
     -- treesitter
@@ -37,9 +37,9 @@ require'packer'.startup(function(use)
     }
 
     use {
-      'folke/trouble.nvim',
-      requires = 'kyazdani42/nvim-web-devicons',
-      config = function() require'trouble'.setup() end,
+	'folke/trouble.nvim',
+	requires = 'kyazdani42/nvim-web-devicons',
+	config = function() require'trouble'.setup() end,
     }
 
     -- indentation markers (vertical lines)
@@ -118,8 +118,8 @@ require'packer'.startup(function(use)
     use 'mg979/vim-visual-multi'
 
     use {
-      'folke/which-key.nvim',
-      config = function() require'which-key'.setup {} end,
+	'folke/which-key.nvim',
+	config = function() require'which-key'.setup {} end,
     }
 end)
 
