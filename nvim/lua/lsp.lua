@@ -18,16 +18,21 @@ require'nvim-lsp-installer'.setup {}
 
 local lsp_config = require'lspconfig'
 
-lsp_config.rust_analyzer.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
+local function setup_lsp(server, props)
+    local setup_table = { capabilities = capabilities, on_attach = on_attach }
+    for key, val in ipairs(props or {}) do
+	setup_table[key] = val
+    end
+    lsp_config[server].setup(setup_table)
+end
+
+setup_lsp('rust_analyzer', {
     ['rust-analyzer'] = {
 	checkonsave = { command = 'clippy' },
     },
-}
-lsp_config.sumneko_lua.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
+})
+
+setup_lsp('sumneko_lua', {
     settings = {
 	Lua = {
 	    runtime = {
@@ -45,7 +50,12 @@ lsp_config.sumneko_lua.setup {
 	    },
 	},
     }
-}
+})
+
+setup_lsp 'svelte'
+setup_lsp 'tsserver'
+setup_lsp 'eslint'
+
 lsp_config.svelte.setup {
     capabilities = capabilities,
     on_attach = on_attach,
