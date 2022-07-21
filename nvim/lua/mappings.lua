@@ -19,6 +19,7 @@ vmap('>', '>gv')
 -- open the terminal
 cmd_nmap('<Leader>mm', 'ToggleTerm direction=horizontal')
 cmd_nmap('<Leader>mn', 'ToggleTerm direction=float')
+cmd_nmap('<Leader>ma', 'ToggleTermToggleAll')
 
 -- allow leaving the terminal
 term_map('<esc>', '')
@@ -27,11 +28,11 @@ term_map('<C-j>', '<C-W>j')
 term_map('<C-k>', '<C-W>k')
 term_map('<C-l>', '<C-W>l')
 
--- barbar / file tabs
-cmd_nmap('f', 'BufferLinePick')
-cmd_nmap('F', 'BufferLinePickClose')
+-- bufferline / file tabs
 cmd_nmap('<TAB>', 'BufferLineCycleNext')
 cmd_nmap('<S-TAB>', 'BufferLineCyclePrev')
+cmd_nmap('<Leader>w', 'BufDel')
+cmd_nmap('<Leader>W', 'BufDel!')
 
 -- toggle file tree
 cmd_nmap('<Leader>e', 'NvimTreeToggle')
@@ -40,8 +41,14 @@ cmd_nmap('<Leader>e', 'NvimTreeToggle')
 cmd_nmap('<Leader>p', 'Neoformat')
 
 -- telescope
-cmd_nmap('<Leader>f', 'Telescope live_grep')
-cmd_nmap('<Leader>r', 'Telescope find_files')
+cmd_nmap('<Leader>ff', 'Telescope live_grep')
+cmd_nmap('<Leader>fg', 'Telescope find_files')
+cmd_nmap('<Leader>fs', 'Telescope git_status')
+cmd_nmap('<Leader>fd', 'Telescope diagnostics')
+cmd_nmap('<Leader>fc', 'Telescope command_history')
 
 -- info on key bindings
 cmd_nmap('?', 'WhichKey')
+
+-- lazygit
+cmd_nmap('<Leader>gg', 'LazyGit')

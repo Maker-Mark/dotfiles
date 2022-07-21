@@ -29,6 +29,9 @@ require'packer'.startup(function(use)
     -- NOTE: is this needed?
     use 'nvim-treesitter/nvim-treesitter-refactor'
 
+    -- git UI inside nvim
+    use 'kdheepak/lazygit.nvim'
+
     -- file menu
     use {
 	'kyazdani42/nvim-tree.lua',
@@ -105,6 +108,9 @@ require'packer'.startup(function(use)
 	    }
 	} end,
     }
+
+    -- closing tabs (tiny bit cleaner)
+    use 'ojroques/nvim-bufdel'
 
     -- statusline
     use {
