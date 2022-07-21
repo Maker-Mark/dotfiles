@@ -33,7 +33,11 @@ require'packer'.startup(function(use)
     use {
 	'kyazdani42/nvim-tree.lua',
 	requires = 'kyazdani42/nvim-web-devicons',
-	config = function() require'nvim-tree'.setup() end,
+	config = function() require'nvim-tree'.setup {
+	    view = {
+		hide_root_folder = true,
+	    }
+	} end,
     }
 
     use {
@@ -86,7 +90,20 @@ require'packer'.startup(function(use)
 	'akinsho/bufferline.nvim',
 	tag = 'v2.*',
 	requires = 'kyazdani42/nvim-web-devicons',
-	config = function() require'bufferline'.setup() end,
+	config = function() require'bufferline'.setup {
+	    options = {
+		offsets = {
+		    {
+			filetype = "NvimTree",
+			text = function()
+			    return vim.fn.getcwd():gsub(os.getenv('HOME'), '~')
+			end,
+			highlight = "directory",
+			text_align = "left"
+		    },
+		},
+	    }
+	} end,
     }
 
     -- statusline

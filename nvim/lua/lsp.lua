@@ -20,7 +20,7 @@ local lsp_config = require'lspconfig'
 
 local function setup_lsp(server, props)
     local setup_table = { capabilities = capabilities, on_attach = on_attach }
-    for key, val in ipairs(props or {}) do
+    for key, val in pairs(props or {}) do
 	setup_table[key] = val
     end
     lsp_config[server].setup(setup_table)
