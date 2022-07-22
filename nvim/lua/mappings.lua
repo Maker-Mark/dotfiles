@@ -41,8 +41,8 @@ cmd_nmap('<Leader>e', 'NvimTreeToggle')
 cmd_nmap('<Leader>p', 'Neoformat')
 
 -- telescope
-cmd_nmap('<Leader>ff', 'Telescope live_grep')
-cmd_nmap('<Leader>fg', 'Telescope find_files')
+cmd_nmap('<Leader>ff', 'Telescope find_files')
+cmd_nmap('<Leader>fg', 'Telescope live_grep')
 cmd_nmap('<Leader>fs', 'Telescope git_status')
 cmd_nmap('<Leader>fd', 'Telescope diagnostics')
 cmd_nmap('<Leader>fc', 'Telescope command_history')
