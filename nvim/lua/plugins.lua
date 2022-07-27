@@ -29,9 +29,6 @@ require'packer'.startup(function(use)
     -- NOTE: is this needed?
     use 'nvim-treesitter/nvim-treesitter-refactor'
 
-    -- git UI inside nvim
-    use 'kdheepak/lazygit.nvim'
-
     -- file menu
     use {
 	'kyazdani42/nvim-tree.lua',
@@ -128,6 +125,9 @@ require'packer'.startup(function(use)
 
     -- language support for svelte
     use 'evanleck/vim-svelte'
+
+    -- language support for astro
+    use 'rajasegar/vim-astro'
 
     -- display/menu for nvim command by itself
     use 'glepnir/dashboard-nvim'

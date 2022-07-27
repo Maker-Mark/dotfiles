@@ -51,4 +51,8 @@ cmd_nmap('<Leader>fc', 'Telescope command_history')
 cmd_nmap('?', 'WhichKey')
 
 -- lazygit
-cmd_nmap('<Leader>gg', 'LazyGit')
+local Terminal = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+
+function _LAZYGIT_TOGGLE() lazygit:toggle() end
+cmd_nmap('<Leader>g', 'lua _LAZYGIT_TOGGLE()')
