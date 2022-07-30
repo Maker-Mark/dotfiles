@@ -55,6 +55,7 @@ setup_lsp('sumneko_lua', {
 setup_lsp 'svelte'
 setup_lsp 'tsserver'
 setup_lsp 'eslint'
+setup_lsp 'astro'
 
 lsp_config.svelte.setup {
     capabilities = capabilities,
@@ -65,7 +66,9 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 local cmp = require'cmp'
 cmp.setup({
-    snippet = {},
+    snippet = {
+		expand = function(args) require'luasnip'.lsp_expand(args.body) end
+	},
     mapping = {
 	['<C-p>'] = cmp.mapping.select_prev_item(),
 	['<C-n>'] = cmp.mapping.select_next_item(),

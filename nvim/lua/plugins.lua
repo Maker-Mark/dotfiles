@@ -18,6 +18,9 @@ require'packer'.startup(function(use)
     -- adds symbols to nvm-cmp
     use 'onsails/lspkind.nvim'
 
+	-- snippet engine
+	use 'L3MON4D3/LuaSnip'
+
     -- git integration
     use {
 	'lewis6991/gitsigns.nvim',
