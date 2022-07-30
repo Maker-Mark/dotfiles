@@ -14,3 +14,14 @@ ln -s ./zsh ~/.config/zsh
 2. install [Packer](https://github.com/wbthomason/packer.nvim#quickstart)
 3. move config or simlink with `ln -s ./nvim ~/.config/nvim`
 4. Install desired LSP servers with `:LspInstall <servers>`
+
+## CLI Programs
+- lazygit - git TUI
+- tldr - lookup common commands
+- fzf - general fuzzy search
+- exa - colorized ls
+- starship - shell prompt
+- ripgrep - better grep
+- fnm - node version manager
+- bat - better cat
+- lf - ranger, but not python
