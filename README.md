@@ -2,10 +2,11 @@
 
 Currently this is Unix only. Have yet to have a usecase where WSL wasn't possible, so this will break on plain windows.
 
+### Symlink
 ```bash
-ln -s ./nvim ~/.config/nvim
-ln -s ./.zshrc ~/.zshrc
-ln -s ./zsh ~/.config/zsh
+ln -s "$(pwd)"/nvim ~/.config/nvim
+ln -s "$(pwd)"/.zshrc ~/.zshrc
+ln -s "$(pwd)"/zsh ~/.config/zsh
 ```
 
 ## Neovim
@@ -14,6 +15,14 @@ ln -s ./zsh ~/.config/zsh
 2. install [Packer](https://github.com/wbthomason/packer.nvim#quickstart)
 3. move config or simlink with `ln -s ./nvim ~/.config/nvim`
 4. Install desired LSP servers with `:LspInstall <servers>`
+
+### Install
+macos
+```bash
+brew install neovim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
 
 ## CLI Programs
 - lazygit - git TUI
@@ -25,3 +34,14 @@ ln -s ./zsh ~/.config/zsh
 - fnm - node version manager
 - bat - better cat
 - lf - ranger, but not python
+
+### Install
+macos
+```bash
+for pkg in starship ripgrep lazygit fzf bat exa fnm lf
+do
+	brew install "$(pkg)"
+done
+
+npm i -g tldr
+```
