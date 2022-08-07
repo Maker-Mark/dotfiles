@@ -40,6 +40,10 @@ cmd_nmap('<Leader>e', 'NvimTreeToggle')
 -- prettify
 cmd_nmap('<Leader>p', 'Neoformat')
 
+-- trouble
+cmd_nmap('<Leader>to', 'Trouble')
+cmd_nmap('<Leader>tc', 'TroubleClose')
+
 -- telescope
 cmd_nmap('<Leader>ff', 'Telescope find_files')
 cmd_nmap('<Leader>fg', 'Telescope live_grep')
@@ -55,4 +59,4 @@ local Terminal = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
 
 function _LAZYGIT_TOGGLE() lazygit:toggle() end
-cmd_nmap('<Leader>g', 'lua _LAZYGIT_TOGGLE()')
+cmd_nmap('<Leader>l', 'lua _LAZYGIT_TOGGLE()')
