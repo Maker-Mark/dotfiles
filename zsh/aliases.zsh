@@ -11,7 +11,8 @@ alias rm='rm -i'
 m() {
     for branch in master main
     do
-	if [ "git branch --list $branch" ] then
+	if [ "git branch --list $branch" ]
+	then
 	    git checkout $(branch)
 	fi
     done
