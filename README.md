@@ -2,11 +2,11 @@
 
 Currently this is Unix only. Have yet to have a usecase where WSL wasn't possible, so this will break on plain windows.
 
-### Symlink
+### Symlink & Setup
 ```bash
 ln -s "$(pwd)"/nvim ~/.config/nvim
-ln -s "$(pwd)"/.zshrc ~/.zshrc
 ln -s "$(pwd)"/zsh ~/.config/zsh
+echo "source ~/.config/zsh/.zshrc" >> ~/.zshrc
 ```
 
 ## Neovim
