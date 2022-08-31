@@ -30,7 +30,7 @@ lfcd() {
 }
 bindkey -s "^o" "lfcd\n"
 
-source "$ZDOTDIR/functions.zsh"
+source "$HOME/.config/zsh/functions.zsh"
 
 zsh_add_file 'vi-mode'
 zsh_add_file 'aliases'
