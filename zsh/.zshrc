@@ -30,27 +30,15 @@ lfcd() {
 }
 bindkey -s "^o" "lfcd\n"
 
-
-# file sourcer
-export ZDOTDIR=$HOME/.config/zsh
-function zsh_add_file() {
-    [ -f "$ZDOTDIR/$1.zsh" ] && source "$ZDOTDIR/$1.zsh"
-}
+source "$ZDOTDIR/functions.zsh"
 
 zsh_add_file 'vi-mode'
 zsh_add_file 'aliases'
 zsh_add_file 'paths'
 
-function zsh_add_plugin() {
-	PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
-	if [ ! -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then
-		git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME" --depth 1
-	fi
-
-	zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin"
-	zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME"
-}
-
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+
+zsh_add_completion "git/git/blob/master/contrib/completion/git-completion.zsh"
+compinit
