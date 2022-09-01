@@ -2,7 +2,7 @@
 alias ls="exa --icons -a"
 
 # better git graph
-alias gl="git log --all --graph --decorate"
+alias gl="git log --all --graph --decorate --oneline"
 
 # force confirm
 alias rm='rm -i'
