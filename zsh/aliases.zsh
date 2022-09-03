@@ -1,8 +1,10 @@
 # display with icons
 alias ls="exa --icons -a"
+# tree view
+alias lt="exa --icons -a --tree"
 
 # better git graph
-alias gl="git log --all --graph --decorate --oneline"
+alias gl="git log --all --graph --oneline"
 
 # force confirm
 alias rm='rm -i'
