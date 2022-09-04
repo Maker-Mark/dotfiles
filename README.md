@@ -29,6 +29,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 - tldr - lookup common commands
 - fzf - general fuzzy search
 - exa - colorized ls
+- dust - better du
 - starship - shell prompt
 - ripgrep - better grep
 - fnm - node version manager
@@ -38,7 +39,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ### Install
 macos
 ```bash
-for pkg in starship ripgrep lazygit fzf bat exa fnm lf
+for pkg in starship ripgrep lazygit fzf bat exa fnm lf dust
 do
 	brew install "$(pkg)"
 done
