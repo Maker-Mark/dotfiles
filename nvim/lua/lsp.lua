@@ -14,8 +14,6 @@ local function on_attach()
     nmap('<leader>dk', vim.diagnostic.goto_prev)
 end
 
-require'nvim-lsp-installer'.setup {}
-
 local lsp_config = require'lspconfig'
 
 local function setup_lsp(server, props)

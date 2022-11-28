@@ -24,7 +24,7 @@ alias gc="git checkout"
 gcm() {
 	for branch in master main; do
 		if [ "`git branch --list $branch`" ]; then
-			git checkout $(branch)
+			git checkout $branch
 		fi
 	done
 }
