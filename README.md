@@ -41,7 +41,7 @@ macos
 ```bash
 for pkg in starship ripgrep lazygit fzf bat exa fnm lf dust
 do
-	brew install "$(pkg)"
+	brew install "$pkg"
 done
 
 npm i -g tldr
