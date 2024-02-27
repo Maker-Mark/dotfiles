@@ -44,14 +44,3 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 
 zsh_add_completion "git/git/blob/master/contrib/completion/git-completion.zsh"
 compinit
-
-# pnpm
-export PNPM_HOME="/Users/worker/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# bun completions
-[ -s "/Users/worker/.bun/_bun" ] && source "/Users/worker/.bun/_bun"
