@@ -25,7 +25,7 @@ function zsh_add_completion() {
 }
 
 function tmp() {
-	local rand_name="$(head /dev/urandom | LC_ALL=C tr -dc a-z0-9 | head -c 6)"
+	local rand_name="r$(head /dev/urandom | LC_ALL=C tr -dc a-z0-9 | head -c 6)"
 	local temp_folder="/tmp/trash-dirs/${1:+$1-}$rand_name"
 	mkdir -p "$temp_folder" && cd "$temp_folder" || return 1
 }
