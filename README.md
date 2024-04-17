@@ -23,3 +23,4 @@ While I spent a lot of time tinkering with neovim in the past, I don't have the 
 - fzf - general fuzzy search
 - dust - better du
 - xh - simpler curl
+- trash - faster and safer way to delete content
