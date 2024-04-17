@@ -1,7 +1,7 @@
 # display with icons
-alias ls="exa --icons -a"
+alias ls="eza --grid --icons -a"
 # tree view
-alias lt="exa --icons -a --tree"
+alias lt="eza --icons -a --tree"
 
 # force confirm
 alias rm='rm -i'

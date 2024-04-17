@@ -17,9 +17,9 @@ While I spent a lot of time tinkering with neovim in the past, I don't have the 
 - starship - shell prompt
 - ripgrep - better grep
 - bat - better cat
-- exa - colorized ls
+- eza - colorized ls
 - fnm - node version manager
 - tldr - lookup common commands
 - fzf - general fuzzy search
 - dust - better du
-- lf - ranger, but not python
+- xh - simpler curl
