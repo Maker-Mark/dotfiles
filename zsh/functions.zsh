@@ -25,7 +25,20 @@ function zsh_add_completion() {
 }
 
 function tmp() {
-	local rand_name="r$(head /dev/urandom | LC_ALL=C tr -dc a-z0-9 | head -c 6)"
+	local rand_name="r$(LC_ALL=C tr -dc a-z0-9 </dev/urandom | head -c 6)"
 	local temp_folder="/tmp/trash-dirs/${1:+$1-}$rand_name"
 	mkdir -p "$temp_folder" && cd "$temp_folder" || return 1
+}
+
+function graduate() {
+	folder_name=${1:-$(basename "$PWD")}
+
+	new_path="$HOME/Workspace/$folder_name"
+	if [ -d $new_path ]; then
+       	echo "Error: Folder $new_path already exists. Aborting."
+       	exit 1
+	fi
+
+	mv "$PWD" $new_path
+	cd $new_path
 }
