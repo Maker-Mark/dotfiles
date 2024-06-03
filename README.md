@@ -1,13 +1,13 @@
 # Dotfiles
 
-These are my unix dotfiles. 
+These are my unix dotfiles. (inspired from my friend @EmNudge :)
 
 While I spent a lot of time tinkering with neovim in the past, I don't have the patience to keep up with breaking changes in plugin management and language servers. I now use [AstroNvim](https://docs.astronvim.com/).
 
 ### Install
 
 ```bash
-./scripts/setup.sh
+sudo ./scripts/setup.sh
 ./scripts/install.sh
 ./scripts/config.sh
 ```
