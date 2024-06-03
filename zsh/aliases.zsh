@@ -13,13 +13,18 @@ alias nd="npm run dev"
 alias nb="npm run build"
 alias nt="npm run test"
 
+
+alias y="yarn"
+alias ya="yarn add"
+alias ys="yarn start"
+
 # force confirm
 alias rm='rm -i'
 
 # better git graph
 alias gl="git log --all --graph --oneline"
 alias gc="git checkout"
-alias rebase-master="gc master && git pull && gc - && git rebase master"
+alias rebase-main="gc main && git pull && gc - && git rebase main"
 alias gb="git blame -w -C -C -C"
 
 # better cat

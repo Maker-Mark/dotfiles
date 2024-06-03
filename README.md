@@ -6,6 +6,9 @@ While I spent a lot of time tinkering with neovim in the past, I don't have the 
 
 ### Install
 
+- Customize `scripts/config.sh`
+- Customize `zsh/` folder's `aliases.zsh`, `functions/zsh` etc to your liking
+
 ```bash
 sudo ./scripts/setup.sh
 ./scripts/install.sh
@@ -13,6 +16,7 @@ sudo ./scripts/setup.sh
 ```
 
 ## CLI Programs
+
 - neovim - better vim
 - starship - shell prompt
 - ripgrep - better grep
