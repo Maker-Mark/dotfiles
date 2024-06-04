@@ -6,6 +6,8 @@ While I spent a lot of time tinkering with neovim in the past, I don't have the 
 
 ### Install
 
+- Download a [nerd font](https://www.nerdfonts.com/font-downloads) & install them to your system (double clicking each file should install it)
+  - Update your terminal's font setting to use a nerd font you installed, otherwise you'll see missing icons/things won't look right. ie for vs code's integrated terminal, in `settings.json` set `"terminal.integrated.fontFamily": "<Font Name">`
 - Customize `scripts/config.sh`
 - Customize `zsh/` folder's `aliases.zsh`, `functions/zsh` etc to your liking
 
