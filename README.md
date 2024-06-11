@@ -6,11 +6,9 @@ While I spent a lot of time tinkering with neovim in the past, I don't have the 
 
 ### Install
 
-```bash
-./scripts/setup.sh
-./scripts/install.sh
-./scripts/config.sh
-```
+- `./scripts/install.sh` to install CLI programs used in aliases.
+- `./scripts/setup.sh` to clone neovim config and symlink zsh.
+- [Optional] `./scripts/config.sh` for some git configs.
 
 ## CLI Programs
 - neovim - better vim
