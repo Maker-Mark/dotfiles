@@ -31,12 +31,9 @@ lfcd() {
 }
 bindkey -s "^o" "lfcd\n"
 
-# pull in functions: zsh_add_file, zsh_add_plugin, zsh_add_completion
-source "$HOME/.config/zsh/functions.zsh"
-
-zsh_add_file 'vi-mode'
-zsh_add_file 'aliases'
-zsh_add_file 'paths'
+source 'vi-mode.zsh'
+source 'aliases.zsh'
+source 'paths.zsh'
 
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-completions"
