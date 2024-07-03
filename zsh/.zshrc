@@ -31,13 +31,51 @@ lfcd() {
 }
 bindkey -s "^o" "lfcd\n"
 
-source 'vi-mode.zsh'
-source 'aliases.zsh'
-source 'paths.zsh'
+export ZDOTDIR=$HOME/.config/zsh
+
+source "$ZDOTDIR/vi-mode.zsh"
+source "$ZDOTDIR/aliases.zsh"
+source "$ZDOTDIR/paths.zsh"
+
+function zsh_add_plugin() {
+	PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+	if [ ! -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then
+		git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME" --depth 1
+	fi
+
+	source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh"
+}
 
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 
-zsh_add_completion "git/git/blob/master/contrib/completion/git-completion.zsh"
+
+fpath+="$ZDOTDIR/completions"
+
+if [[ ! -f "$ZDOTDIR/completions/git-completion.zsh" ]]; then 
+    curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh" \
+        --create-dirs -o "$ZDOTDIR/completions/git-completion.zsh"
+    source "$ZDOTDIR/completions/git-completion.zsh"
+fi
+
 compinit
+
+function tmp() {
+	local rand_name="r$(LC_ALL=C tr -dc a-z0-9 </dev/urandom | head -c 6)"
+	local temp_folder="/tmp/trash-dirs/${1:+$1-}$rand_name"
+	mkdir -p "$temp_folder" && cd "$temp_folder" || return 1
+}
+
+function graduate() {
+	folder_name=${1:-$(basename "$PWD")}
+
+	new_path="$HOME/Workspace/$folder_name"
+	if [ -d $new_path ]; then
+       	echo "Error: Folder $new_path already exists. Aborting."
+       	exit 1
+	fi
+
+	mv "$PWD" $new_path
+	cd $new_path
+}
