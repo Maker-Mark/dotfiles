@@ -79,3 +79,7 @@ function graduate() {
 	mv "$PWD" $new_path
 	cd $new_path
 }
+
+function q() {
+  llm "$*" | bat --paging=never -p -l md
+}
