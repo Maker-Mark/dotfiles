@@ -8,4 +8,6 @@ ln -s "$(pwd)"/AstroNvim ~/.config/nvim
 ln -s "$(pwd)"/zsh ~/.config/zsh
 
 # add zshrc to .zshrc
-echo "source ~/.config/zsh/.zshrc" >> ~/.zshrc
+if ! grep -q "source ~/.config/zsh/.zshrc" ~/.zshrc; then
+  echo "source ~/.config/zsh/.zshrc" >> ~/.zshrc
+fi
